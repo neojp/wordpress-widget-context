@@ -84,7 +84,7 @@ class widget_context {
 				// Check if widget will be shown
 				if ($sidebar_id != 'wp_inactive_widgets' && !empty($widgets)) {
 					foreach ($widgets as $widget_no => $widget_id) {
-						if (!$this->check_widget_visibility($this->context_options[$widget_id])) {
+						if (!$this->check_widget_visibility(@$this->context_options[$widget_id])) {
 							unset($sidebars_widgets[$sidebar_id][$widget_no]);
 							unset($_wp_sidebars_widgets[$sidebar_id][$widget_no]);
 						}
